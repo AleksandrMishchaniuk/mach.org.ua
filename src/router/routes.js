@@ -2,14 +2,15 @@
 export default [
   {
     path: '/',
-    component: () => import('layouts/default'),
-    children: [
-      { path: '', component: () => import('pages/index') }
-    ]
-  },
-
-  { // Always leave this as last one
+    name: 'index',
+    component: () => import('pages/index')
+  }, {
+    path: '/download',
+    name: 'download',
+    component: () => import('pages/Download')
+  }, { // Always leave this as last one
     path: '*',
+    name: 'notFound',
     component: () => import('pages/404')
   }
 ]

@@ -59,6 +59,7 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
+        'QItemSeparator',
         'QItemSide'
       ],
       directives: [
@@ -67,7 +68,8 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
+      i18n: 'ru'
     },
     // animations: 'all' --- includes all animations
     animations: [
