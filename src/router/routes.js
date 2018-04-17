@@ -7,7 +7,7 @@ export default [
   }, {
     path: '/download',
     name: 'download',
-    component: () => import('pages/Download')
+    component: () => import('pages/download')
   }, { // Always leave this as last one
     path: '*',
     name: 'notFound',

@@ -1,11 +1,15 @@
 // Configuration for your app
+let devEnv = module.require('./.env.dev')
+let buildEnv = module.require('./.env.build')
 
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
     plugins: [
       'i18n',
-      'axios'
+      'axios',
+      'vuelidate',
+      'resource'
     ],
     css: [
       'app.styl'
@@ -36,7 +40,8 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /(node_modules|quasar)/
         })
-      }
+      },
+      env: ctx.dev ? devEnv : buildEnv
     },
     devServer: {
       // https: true,
@@ -60,7 +65,10 @@ module.exports = function (ctx) {
         'QItem',
         'QItemMain',
         'QItemSeparator',
-        'QItemSide'
+        'QItemSide',
+        'QField',
+        'QInput',
+        'QSelect'
       ],
       directives: [
         'Ripple'

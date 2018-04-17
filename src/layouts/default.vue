@@ -17,7 +17,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          {{currentPage.title}}
+          {{currentPage ? currentPage.title : ''}}
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
