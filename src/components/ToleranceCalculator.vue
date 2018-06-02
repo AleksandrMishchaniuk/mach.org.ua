@@ -1,4 +1,6 @@
 <template>
+  <div>
+    <div class="q-subheading">{{ $t('components.tolerance-calculator.title') }}</div>
     <div class="row items-center gutter-md">
         <q-field class="col-md-4 col-xs-12" :error-label="formErrors.size">
             <q-input :error="$v.form.size.$error" :value="form.size" :float-label="$t('components.tolerance-calculator.size')+', '+$t('unit.mm')" @blur="$v.form.size.$touch()" @change="initFieldQuality"/>
@@ -15,6 +17,7 @@
             </q-field>
         </div>
     </div>
+  </div>
 </template>
 
 <script>

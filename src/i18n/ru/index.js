@@ -8,7 +8,7 @@ export default {
     menu: {
       title: 'Меню',
       item: {
-        main: 'Главная',
+        main: 'Рассчитать',
         download: 'Скачать'
       }
     }
