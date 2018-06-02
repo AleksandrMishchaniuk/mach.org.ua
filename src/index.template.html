@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="<%= htmlWebpackPlugin.options.productDescription %>">
+    <meta name="description" content="Определение полей допусков online по ГОСТ 25347-82. Сервис - <%= htmlWebpackPlugin.options.productName %>">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (htmlWebpackPlugin.options.ctx.mode.cordova) { %>, viewport-fit=cover<% } %>">
-    <title><%= htmlWebpackPlugin.options.productName %></title>
+    <title>Расчет допусков online - <%= htmlWebpackPlugin.options.productName %></title>
 
     <link rel="icon" href="statics/quasar-logo.png" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="statics/icons/favicon-32x32.png">
@@ -47,7 +47,9 @@
     <% } %>
 
     <!-- DO NOT touch the following <div> -->
-    <div id="q-app"></div>
+    <div id="q-app">
+      <h1 style="display: none;">Расчет допусков online</h1>
+    </div>
 
     <!-- DO NOT touch the following -->
     <%= htmlWebpackPlugin.options.bodyScripts %>
