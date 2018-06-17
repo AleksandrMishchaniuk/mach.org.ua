@@ -50,7 +50,7 @@ export default {
       this.form.tolerance.max = null
       this.form.tolerance.min = null
       if (!this.$v.form.size.$error) {
-        this.$http.get(process.env.API + '/v1/fields-qualities', {
+        this.$http.get(process.env.API_URL + '/v1/fields-qualities', {
           params: {size: this.form.size}
         }).then(
           response => {
@@ -68,7 +68,7 @@ export default {
       this.form.fieldQuality = val
       this.form.tolerance.max = null
       this.form.tolerance.min = null
-      this.$http.get(process.env.API + '/v1/tolerance', {
+      this.$http.get(process.env.API_URL + '/v1/tolerance', {
         params: {
           size: this.form.size,
           'field-quality': this.form.fieldQuality
@@ -98,7 +98,7 @@ export default {
     }
   },
   created: function () {
-    this.$http.get(process.env.API + '/v1/ranges-limits').then(
+    this.$http.get(process.env.API_URL + '/v1/ranges-limits').then(
       response => {
         this.sizeLimit.max = response.body.max_val
         this.sizeLimit.min = response.body.min_val
