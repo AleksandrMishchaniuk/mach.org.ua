@@ -19,5 +19,7 @@ yarn-error.log*
 *.sln
 
 
-.env.*
+.env.*.js
 !.env.example.js
+.env
+.*.env

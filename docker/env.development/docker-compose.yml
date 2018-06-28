@@ -1,0 +1,20 @@
+version: "3"
+services:
+  node-quasar:
+    build: ../node-quasar
+    image: node-quasar
+    container_name: mach.org.ua_node-quasar
+    volumes:
+      - "../..:/code"
+    working_dir: /code
+    command: ./build.sh
+    expose:
+      - 80
+    env_file:
+      - ../node-quasar/.dev.env
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+

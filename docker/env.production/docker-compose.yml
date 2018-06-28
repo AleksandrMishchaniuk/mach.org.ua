@@ -1,28 +1,27 @@
 version: "3"
 services:
   node-quasar:
-    build: ./node-quasar
+    build: ../node-quasar
     image: node-quasar
     container_name: mach.org.ua_node-quasar
     volumes:
-      - "./..:/code"
+      - "../..:/code"
     working_dir: /code
+    env_file:
+      - ../node-quasar/.env
     tty: true
     stdin_open: true
   nginx:
     image: nginx:alpine
     container_name: mach.org.ua_nginx
     volumes:
-      - "./../dist/spa-mat:/usr/share/nginx/html"
-      - "./nginx/logs:/var/log/nginx"
-      - "./nginx/conf.d:/etc/nginx/conf.d"
+      - "../../dist/spa-mat:/usr/share/nginx/html"
+      - "../nginx/logs:/var/log/nginx"
+      - "../nginx/conf.d:/etc/nginx/conf.d"
     expose:
       - 80
-    environment:
-      VIRTUAL_HOST: mach.org.ua
-      VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: mach.org.ua
-      LETSENCRYPT_EMAIL: admin@mach.org.ua
+    env_file:
+      - ../nginx/.env
 networks:
   default:
     external:
