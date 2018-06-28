@@ -11,7 +11,9 @@ services:
     expose:
       - 80
     env_file:
-      - ../node-quasar/.dev.env
+      - ../.host.env
+    environment:
+      APP_ENV: local
 
 networks:
   default:
