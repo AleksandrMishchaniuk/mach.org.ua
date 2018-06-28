@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       links: {
-        gost: process.env.API_URL + '/downloads/GOST-25347-82.pdf'
+        gost: process.env.DEVELOPER_URL + '/downloads/GOST-25347-82.pdf'
       }
     }
   }
