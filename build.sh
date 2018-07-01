@@ -7,7 +7,7 @@ dev_env="local"
 
 if [ $APP_ENV = $dev_env ]
 then
-    quasar dev -p 80
+    quasar dev -p 8080
 else
     quasar build
 fi

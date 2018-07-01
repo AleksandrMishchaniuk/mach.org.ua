@@ -1,9 +1,13 @@
 version: "3"
 services:
   node-quasar:
-    build: ../node-quasar
-    image: node-quasar
+    build:
+      context: ../node-quasar
+      args:
+        uid: ${CURRENT_UID}
+    image: node-quasar:1.0.0
     container_name: mach.org.ua_node-quasar
+    user: ${CURRENT_UID}:${CURRENT_GID}
     volumes:
       - "../..:/code"
     working_dir: /code
